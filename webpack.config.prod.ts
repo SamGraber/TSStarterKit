@@ -8,8 +8,8 @@ export default {
 	devtool: 'source-map',
 	noInfo: false,
 	entry: {
-		vendor: path.resolve(__dirname, 'source/vendor'),
-		main: path.resolve(__dirname, 'source/index'),
+		vendor: path.resolve(__dirname, 'source/vendor.ts'),
+		main: path.resolve(__dirname, 'source/index.ts'),
 	},
 	target: 'web',
 	output: {
@@ -54,7 +54,7 @@ export default {
 	],
 	module: {
 		loaders: [
-			{test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
+			{test: /\.ts$/, exclude: /node_modules/, loaders: ['awesome-typescript-loader']},
 			{test: /\.css$/, loaders: ['style', 'css']},
 		],
 	},
