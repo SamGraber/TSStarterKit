@@ -6,3 +6,11 @@
 
 # Build folder
 /dist/
+
+# Built files
+/buildScripts/**/*.js
+/buildScripts/**/*.d.ts
+/source/**/*.js
+/source/**/*.d.ts
+webpack.*.js
+webpack.*.d.ts
