@@ -23,6 +23,7 @@ export default {
 		loaders: [
 			{test: /\.ts$/, exclude: /node_modules/, loaders: ['awesome-typescript-loader']},
 			{test: /\.css$/, loaders: ['style', 'css']},
+			{test: /\.html$/, loaders: ['html']},
 		],
 	},
 };
