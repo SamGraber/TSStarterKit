@@ -29,6 +29,9 @@ export default {
 			inject: true,
 		}),
 	],
+	resolve: {
+		extensions: ['', '.ts', '.js'],
+	},
 	module: {
 		loaders: [
 			{test: /\.ts$/, exclude: /node_modules/, loaders: ['awesome-typescript-loader']},
