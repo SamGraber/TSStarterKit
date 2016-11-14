@@ -5,6 +5,8 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as WebpackMd5Hash from 'webpack-md5-hash';
 import commonConfig from './webpack.common';
 
+const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
+
 export default webpackMerge(commonConfig, {
 	devtool: 'source-map',
 	output: {
