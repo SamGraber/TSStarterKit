@@ -41,6 +41,7 @@
     "@types/open": "0.0.29",
     "@types/typescript": "^0.4.29",
     "@types/webpack": "^1.12.35",
+    "@types/webpack-merge": "0.0.3",
     "awesome-typescript-loader": "^2.2.4",
     "babel-cli": "6.16.0",
     "babel-core": "6.17.0",
