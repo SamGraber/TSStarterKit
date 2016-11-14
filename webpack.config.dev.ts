@@ -1,6 +1,6 @@
-import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as path from 'path';
+import * as webpack from 'webpack';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
 	debug: true,
@@ -31,7 +31,7 @@ export default {
 	],
 	module: {
 		loaders: [
-			{test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
+			{test: /\.ts$/, exclude: /node_modules/, loaders: ['awesome-typescript-loader']},
 			{test: /\.css$/, loaders: ['style', 'css']},
 		],
 	},

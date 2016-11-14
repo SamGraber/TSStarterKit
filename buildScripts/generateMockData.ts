@@ -6,16 +6,16 @@
 
 /* eslint-disable no-console */
 
-import jsf from 'json-schema-faker';
+import * as jsf from 'json-schema-faker';
 import { schema } from './mockDataSchema';
-import fs from 'fs';
-import chalk from 'chalk';
+import * as fs from 'fs';
+import * as chalk from 'chalk';
 
-const json = JSON.stringify(jsf(schema));
+const json = JSON.stringify((jsf as any)(schema));
 
 fs.writeFile('./source/api/db.json', json, (err) => {
 	if (err) {
-		return console.log(chalk.red(err));
+		return console.log(chalk.red(<any>err));
 	} else {
 		console.log(chalk.green('Mock data generated.'));
 	}

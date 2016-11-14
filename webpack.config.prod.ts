@@ -1,7 +1,7 @@
-import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import WebpackMd5Hash from 'webpack-md5-hash';
+import * as path from 'path';
+import * as webpack from 'webpack';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as WebpackMd5Hash from 'webpack-md5-hash';
 
 export default {
 	debug: true,
@@ -19,7 +19,7 @@ export default {
 	},
 	plugins: [
 		// Hash the files using MD5 so that their names change when the content changes.
-		new WebpackMd5Hash(),
+		new (WebpackMd5Hash as any)(),
 
 		// Use CommonsChunkPlugin to create a separate bundle
 		// of vendor libraries so that they're cached separately.
@@ -28,7 +28,7 @@ export default {
 		}),
 
 		// Create HTML file that includes reference to bundled JS.
-		new HtmlWebpackPlugin({
+		new HtmlWebpackPlugin(<any>{
 			template: 'source/index.html',
 			minify: {
 				removeComments: true,

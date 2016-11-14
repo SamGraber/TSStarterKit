@@ -1,7 +1,7 @@
-import express from 'express';
-import path from 'path';
-import open from 'open';
-import webpack from 'webpack';
+import * as express from 'express';
+import * as path from 'path';
+import * as open from 'open';
+import * as webpack from 'webpack';
 import config from '../webpack.config.dev';
 
 /* eslint-disable no-console */
@@ -32,6 +32,6 @@ app.listen(port, (err) => {
 	if(err) {
 		console.log(err);
 	} else {
-		open('http://localhost:' + port);
+		(open as any)('http://localhost:' + port);
 	}
 });
