@@ -16,19 +16,6 @@ export default {
 		publicPath: '/',
 		filename: '[name].js',
 	},
-	plugins: [
-		// Use CommonsChunkPlugin to create a separate bundle
-		// of vendor libraries so that they're cached separately.
-		new webpack.optimize.CommonsChunkPlugin({
-			name: 'vendor',
-		}),
-
-		// Create HTML file that includes reference to bundled JS.
-		new HtmlWebpackPlugin({
-			template: 'source/index.html',
-			inject: true,
-		}),
-	],
 	resolve: {
 		extensions: ['', '.ts', '.js'],
 	},

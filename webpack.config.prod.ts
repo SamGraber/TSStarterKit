@@ -15,6 +15,12 @@ export default webpackMerge(commonConfig, {
 		filename: '[name].[chunkhash].js',
 	},
 	plugins: [
+		// Use CommonsChunkPlugin to create a separate bundle
+		// of vendor libraries so that they're cached separately.
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor',
+		}),
+
 		// Hash the files using MD5 so that their names change when the content changes.
 		new (WebpackMd5Hash as any)(),
 
