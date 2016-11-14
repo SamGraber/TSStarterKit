@@ -7,6 +7,7 @@ export default {
 	devtool: 'inline-source-map',
 	noInfo: false,
 	entry: {
+		polyfills: path.resolve(__dirname, 'source/polyfills.ts'),
 		vendor: path.resolve(__dirname, 'source/vendor.ts'),
 		main: path.resolve(__dirname, 'source/index.ts'),
 	},
