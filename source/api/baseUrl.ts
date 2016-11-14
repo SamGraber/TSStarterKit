@@ -1,14 +1,14 @@
-export default function getBaseUrl() {
+export default function getBaseUrl(): string {
 	return getQueryStringParameterByName('useMockApi') ? 'http://localhost:3001/' : '/';
 }
 
-function getQueryStringParameterByName(name, url) {
+function getQueryStringParameterByName(name: string, url: string = ''): string | null {
 	if (!url) {
 		url = window.location.href;
 	}
 	name = name.replace(/[\[\]]/g, '\\$&');
-	var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-	var results = regex.exec(url);
+	const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+	const results = regex.exec(url);
 	if (!results) {
 		return null;
 	}

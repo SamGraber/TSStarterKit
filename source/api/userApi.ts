@@ -2,19 +2,19 @@ import getBaseUrl from './baseUrl';
 
 const baseUrl = getBaseUrl();
 
-export function getUsers() {
+export function getUsers(): Promise<any> {
 	return get('users');
 }
 
-export function deleteUser(id) {
+export function deleteUser(id): Promise<void> {
 	return del(`users/${id}`);
 }
 
-function get(url) {
+function get(url): Promise<any> {
 	return fetch(baseUrl + url).then(onSuccess, onError);
 }
 
-function del(url) {
+function del(url): Promise<void> {
 	const request = new Request(baseUrl + url, {
 		method: 'DELETE',
 	});
@@ -22,10 +22,10 @@ function del(url) {
 	return fetch(request).then(onSuccess, onError);
 }
 
-function onSuccess(response) {
+function onSuccess(response: Response): any {
 	return response.json();
 }
 
-function onError(error) {
+function onError(error: any): void {
 	console.log(error); // eslint-disable-line no-console
 }

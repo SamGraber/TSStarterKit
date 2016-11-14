@@ -14,14 +14,14 @@ getUsers().then(result => {
 		</tr>`;
 	});
 
-	global.document.getElementById('users').innerHTML = usersBody;
+	document.getElementById('users').innerHTML = usersBody;
 
-	const deleteLinks = global.document.getElementsByClassName('deleteUser');
+	const deleteLinks = document.getElementsByClassName('deleteUser');
 
 	// Must use array.from to create a real array from a DOM collection
 	// getElementsByClassName only returns an "array like" object
 	Array.from(deleteLinks, link => {
-		link.onclick = (event) => {
+		(link as any).onclick = (event) => {
 			const element = event.target;
 			event.preventDefault();
 			deleteUser(element.attributes['data-id'].value);
