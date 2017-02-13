@@ -25,7 +25,12 @@
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
+    "@angular/common": "~2.1.2",
+    "@angular/core": "~2.1.2",
+    "@angular/platform-browser": "~2.1.2",
+    "@angular/platform-browser-dynamic": "~2.1.2",
     "@types/whatwg-fetch": "0.0.32",
+    "rxjs": "~5.0.0-rc.2",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
